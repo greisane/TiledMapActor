@@ -12,7 +12,7 @@ class UStaticMesh;
 class UBillboardComponent;
 
 USTRUCT()
-struct EGG_API FTiledMapMeshTableRow : public FTableRowBase
+struct FTiledMapMeshTableRow : public FTableRowBase
 {
 	GENERATED_BODY()
 
@@ -23,7 +23,7 @@ public:
 };
 
 UCLASS(hidecategories=(Movement, Advanced, Collision, Display, Actor, Attachment, Input))
-class EGG_API ATiledMapActor : public AActor
+class ATiledMapActor : public AActor
 {
 	GENERATED_BODY()
 
