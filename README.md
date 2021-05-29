@@ -1,11 +1,12 @@
 # TiledMapActor
 Simple UE4 actor to import JSON maps made in Tiled. Not production ready.
 
-The attached .blend contains a sample tileset and a script to generate a csv with asset paths.
+The attached .blend contains a sample tileset and a script to generate a .csv with asset paths.
 
 # Usage
-1. Include the source files in your C++ project and build.
-2. Create a data table with *TiledMapMeshTableRow* data structure and fill it in manually.  
+1. Add `"JSon"` to `PrivateDependencyModuleNames` to your build rules file (MyGame.Build.cs)
+2. Include the source files TiledMapActor.h and TiledMapActor.cpp in your C++ project and build.
+3. Create a data table with *TiledMapMeshTableRow* data structure and fill it in manually.  
 OR  
 Run the script in the sample .blend file to generate a .csv data table which you can import.  
 3. Put your JSON map somewhere in the game content folder.
