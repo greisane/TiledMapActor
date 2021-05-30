@@ -16,7 +16,7 @@ ATiledMapActor::ATiledMapActor()
 	: MapPath("Maps/Map.json")
 	, TileSize(100.f, 100.f)
 {
-	USceneComponent* SceneComponent = CreateDefaultSubobject<USceneComponent>(TEXT("SceneComp"));
+	SceneComponent = CreateDefaultSubobject<USceneComponent>(TEXT("SceneComp"));
 	RootComponent = SceneComponent;
 
 #if WITH_EDITORONLY_DATA
@@ -157,7 +157,7 @@ bool ATiledMapActor::InternalImportMap(const FString& Filepath, FString& ErrorMe
 						const FString ObjectName = FString::Printf(TEXT("%d_%d"), LayerId, TileIdx);
 						UStaticMeshComponent* StaticMeshComponent = NewObject<UStaticMeshComponent>(this, FName(*ObjectName));
 						StaticMeshComponent->SetCollisionProfileName(UCollisionProfile::BlockAll_ProfileName);
-						StaticMeshComponent->Mobility = EComponentMobility::Static;
+						StaticMeshComponent->Mobility = RootComponent->Mobility;
 						StaticMeshComponent->SetGenerateOverlapEvents(false);
 						StaticMeshComponent->bUseDefaultCollision = true;
 						StaticMeshComponent->SetupAttachment(RootComponent);

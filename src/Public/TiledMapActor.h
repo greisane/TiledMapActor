@@ -62,7 +62,10 @@ public:
 	void ImportMap();
 #endif
 
-protected:
+private:
 
 	bool InternalImportMap(const FString& Filepath, FString& ErrorMessage);
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Tiled Map", meta=(AllowPrivateAccess="true"))
+	class USceneComponent* SceneComponent;
 };
